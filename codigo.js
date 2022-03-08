@@ -19,6 +19,14 @@ function inicio(){
     document.querySelector("#btnVolverMenu").addEventListener("click",funcionVolverAtrasDesdeMisCompras)
     document.querySelector("#btnCargarSaldo").addEventListener("click",funcionCargarSaldo)
     
+    document.querySelector("#btnNavBarHome").addEventListener("click",verificarUsuarioLogueado)
+    document.querySelector("#btnNavBarProducts").addEventListener("click",verificarUsuarioLogueado)
+    document.querySelector("#btnNavBarContact").addEventListener("click",verificarUsuarioLogueado)
+    document.querySelector("#btnNavBarNosotros").addEventListener("click",verificarUsuarioLogueado)
+    document.querySelector("#btnNavBarRedes").addEventListener("click",verificarUsuarioLogueado)
+    document.querySelector("#btnNavBarNoticias").addEventListener("click",verificarUsuarioLogueado)
+    document.querySelector("#btnNavBarCargarSaldo").addEventListener("click",verificarUsuarioLogueado)
+
 }
 //variables y listas  globales
 let usuario = null;
@@ -308,7 +316,7 @@ function funcionVolverAtrasDesdeMisCompras(){
          if(usuarioGlobal.listaCarritoUsuario[pos].id==idProducto){
              encontrado = true;
              buscado = usuarioGlobal.listaCarritoUsuario[pos];
-             usuarioGlobal.listaCarritoUsuario.splice(pos)
+             usuarioGlobal.listaCarritoUsuario.splice(pos,1)
          }
      }
      funcionMostrarMiCarrito();
@@ -426,6 +434,8 @@ function funcionCargarSaldo(){
 
 //precarga de datos
     function precarga(){
+        console.log(listaProductosCombos)
+        console.log(listaProductosComponentes)
         alert("Para iniciar sesion usar Usuario= german Contraseña= 123")
         document.querySelector("#miPerfil").style.display="none";
         document.querySelector("#btnVolverMenu").style.display="none";
@@ -454,6 +464,8 @@ function funcionCargarSaldo(){
         let productoComponente2 = agregarProductoComponentes("Procesador intel",150,250,"/imgs/procesador-Intel-menu.jpg")
         let productoComponente3 = agregarProductoComponentes("Grafica RTX 3060",250,300,"/imgs/rtx3060.png")
     
+        console.log(listaProductosCombos)
+        console.log(listaProductosComponentes)
         // usuario1.listaCarritoUsuario.push(productoCombo1)
         // usuario1.listaCarritoUsuario.push(productoComponente1)
         // usuario1.listaCarritoUsuario.push(productocombo5)
