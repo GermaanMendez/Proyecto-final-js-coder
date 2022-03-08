@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+
+:root{
+    /* declarar variables con css */
+    --color-menu:#d3ad7f;
+    --color-negro:#13131a;
+    --color-fondo:#010103;
+    --bordes:.1rem solid rgba(255,255,255,.3);
+    --color-manzana: greenyellow;
+}
+
+*{
+    font-family: 'Roboto',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    /* transition: .2s linear; */
+}
+
+html{
+font-size: 62.5%;
+/* Esta propiedad determina como se debe mostrar el contenido cuando se desborda de los extremos izquierdo y derecho de una caja, en este caso si tengo un texto que es mas ancho que la caja donde esta siendo contenido con hidden digo que el contenido se recorte para que se ajuste al tamaño de la caja horizontalmente */
+overflow-x: hidden;
+/* velocidad del scroll hacia arriba */
+scroll-padding-top: 9rem;
+scroll-behavior: smooth;
+
+}
+
+/* ---------------------------------------------------SCROLL BAR------------------- */
+/* controlo el diseño de la scrollbar  */
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+html::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: red;
+    border-radius: .5rem;
+}
+
+/* ------------------------------------------BODY------------------------------ */
+body{
+    background: var(--color-fondo);
+}
+section{
+    padding: 2rem 7%;
+}
+/* botones de leer mas menu */
+.btn{
+    margin-top: 1rem;
+    display: inline-flex;
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    color: rgba(0, 255, 8, 0.782);
+    background: rgba(102, 98, 98, 0.097);
+    cursor: pointer;
+}
+
+.btn:hover{
+    /*Define el espaciado entre los caracteres de un bloque de texto.  */
+    letter-spacing: .2rem;
+}
+.mensajesP{
+    margin-top: 20px;
+    font-size: 1.7rem;
+    color: red;
+}
+/* ------------------------------------------HEADER------------------------------ */
+.header{
+    background: var(--color-fondo);
+    /* display flex, se adaptan y pueden modificar su forma */
+    display: flex;
+    align-items: center;
+    /* define cómo el navegador distribuye el espacio entre y alrededor de los elementos de contenido a lo largo del eje principal de un contenedor flexible y el eje en línea de un contenedor de cuadrícula. */
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    border-bottom: var(--bordes);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    /* indica el orden de un elemento posicionado y sus descendientes. Cuando varios elementos se superponen, los elementos con mayor valor z-index cubren aquellos con menor valor. */
+    z-index: 1000;
+}
+/* ----------------logo img del header en el navbar */
+.header .logo img{
+    height: 6rem;
+}
+/* ---------------------------------------------------NAVBAR DEL HEADER------------ */
+/* ---------a del header */
+.header .navbar a{
+    /* espacio horizontal entre cada boton del navbar */
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: greenyellow;
+}
+/* -----------hover en botones del header  */
+.header .navbar a:hover{
+    color: yellow;
+    border-bottom: .1rem solid red;
+    padding-bottom: .5rem;
+}
+/* -------------iconos de busqueda, carrito y menu */
+.header .icons div{ 
+    color: #fff;
+    /* especifica el tipo de puntero que se mostrara cuando se esta sobre el elemento, en este caso pongo la tipica manito */
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+.header .icons div:hover{
+    color:red
+ }
+
+ /* -------icono de menu */
+ #botonMenu{
+     /* display: none; */
+ }
+
+ /* ----------------------------------PRODUCTOS AGREGADOS AL CARRITO------------ */
+ .contenedor-items-carrito{
+     position: absolute;
+     top: 100%; right: 0;
+     height: calc(100vh - 9.5rem);
+     width: 35rem;
+     background:#fff;
+     padding: 0 1.5rem;
+ }
+ .contenedor-items-carrito .item-carrito{
+    position: relative;
+   margin: 2rem 0;
+   display: flex;
+   align-items: center;
+   /* especifica el espacio entre columna y columna */
+   gap: 1.5rem;
+}
+
+/* --------------------------------SECCION DE INICIAR SESION HOME---------------- */
+.login .row{
+    display: flex;
+    /* align-items: center; */
+    background: var(--color-negro);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.login .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.login .row form h3{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #fff;
+}
+.login .row form .inputBox{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: var(--color-fondo);
+    border: var(--bordes);
+}
+.login .row form .inputBox span{
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+.login .row form .inputBox input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background:none ;
+}
+
+/* --------------------------------SECCION DE REGISTRO SESION HOME---------------- */
+.register .row{
+    display: flex;
+    /* align-items: center; */
+    background: var(--color-negro);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.register .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.register .row form h3{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #fff;
+}
+.register .row form .inputBox{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: var(--color-fondo);
+    border: var(--bordes);
+}
+.register .row form .inputBox span{
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+.register .row form .inputBox input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background:none ;
+}
+
+/* --------------------------------SECCION DEL HOME---------------- */
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('/imgs/fondosimbolosplay.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.home .content{
+    margin-top: 100px;
+    max-width: 60rem;
+}
+.home .content h3{
+    font-size: 6rem;
+    /* paso a mayusculas el texto */
+    text-transform: uppercase;
+    color: rgba(119, 0, 255, 0.645);
+}
+.home .content p{
+    font-size: 2rem;
+    /* asigno el grosor de la letra */
+    font-weight: lighter;
+    /* asigno la distancia entre las lineas de texto a nivel de elementos de bloque */
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: rgb(254, 253, 255);
+}
+
+/* --------------------------------SECCION DEL ABOUT---------------- */
+.heading{
+    text-align: center;
+    color: rgba(0, 255, 8, 0.782);
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+.heading span{
+    color: greenyellow;
+    text-transform: uppercase;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    /* background-color: var(--color-negro); */
+    background-color: var(--color-negro);
+    /*  especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas. Si la cobertura (wrap) está permitida, esta propiedad también te permite controlar la dirección en la cual serán apilados los elementos.   */
+    /* Los elementos flex son colocados en varias líneas. El valor cross-start equivale a start o before dependiendo del valor flex-direction y cross-end implicaría lo opuesto a lo especificado por cross-start. */
+    flex-wrap: wrap;
+}
+.about .row .image{
+    /* La propiedad CSS flex es una propiedad resumida que indica la capacidad de un elemento flexible para alterar sus dimensiones y llenar el espacio disponible. Los elementos flexibles pueden ser estirados para utilizar el espacio disponible proporcional a su factor de crecimiento flexible o su factor de contracción flexible para evitar desbordamiento. */
+    flex: 1 1 45rem;
+}
+.about .row .image img{
+    width: 100%;
+}
+.about .row .content{
+    /* La propiedad CSS flex es una propiedad resumida que indica la capacidad de un elemento flexible para alterar sus dimensiones y llenar el espacio disponible. Los elementos flexibles pueden ser estirados para utilizar el espacio disponible proporcional a su factor de crecimiento flexible o su factor de contracción flexible para evitar desbordamiento. */
+    flex: 1 1 45rem;
+    padding:2rem ;
+}
+.about .row .content h3{
+    font-size: 3rem;
+    padding:2rem ;
+    color:rgb(154, 23, 230);
+}
+.about .row .content p{
+    font-size: 1.5rem;
+    color: greenyellow;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+.about .row .content a{
+    color:rgb(154, 23, 230);
+}
+
+/* --------------------------------SECCION DEL MENU-------------------- */
+.menu .box-container{
+    /* El elemento se comporta como un elemento de bloque y establece su contenido de acuerdo con el modelo de cuadrícula. */
+    display: grid;
+    /* La propiedad CSS grid-template-columns define el nombre de las líneas y las funciones de tamaño de línea de grid columns. */
+    /* Una columna de grid es una pista vertical en un CSS Grid Layout, y es el espacio entre dos líneas verticales de cuadrícula. Está definido por la propiedad grid-template-columns o por las propiedades abreviadas grid o grid-template (en-US). */
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap:1.5rem;
+}
+.menu .box-container .box{
+    padding: 5rem;
+    text-align: center;
+    border:var(--bordes);
+}
+.menu .box-container .box img{
+    /* height: 10rem; */
+    width:180px;
+     height:160px;
+}
+.menu .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.menu .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding: .5rem 0;
+}
+.menu .box-container .box .price span{
+    color: #fff;
+    font-size: 1.5rem;
+   text-decoration: line-through;
+}
+.menu .box-container .box:hover{
+  /* background: #fff; */
+}
+.menu .box-container .box:hover > *{
+    background: var(--color-negro);
+  }
+
+/* -------------------------SECCION PRODUCTOS COMPONENTES------------------------ */
+/* box global donde se agruoan  TODOS los productos */
+
+.products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1.5rem;
+}
+/* cada box individual de cada producto */
+.products .box-container .box{
+   text-align: center;
+   border: var(--bordes);
+   padding: 2rem;
+}
+/* iconos de cada prodcuto */
+
+ .products .box-container .box .icons a:hover{ 
+   background: var(--color-menu);
+  }
+  /* imagen de producto */
+  .products .box-container .box .image img{ 
+    margin-top: 10px;
+    width: 160px;
+    height: 160px;
+   }
+   /* titulo de producto */
+   .products .box-container .box .content h3{ 
+     color: #fff;
+     font-size: 2.5rem;
+     padding: 1.5rem;
+   }
+  /* precio del producto */
+  .products .box-container .box .content .price{ 
+    /* background-color: blue; */
+    color: #fff;
+    font-size: 2.5rem;
+  }
+  /* precio antiguo del producto */
+  .products .box-container .box .content .price span{ 
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1.5rem;
+  }
+/* -----------------------------------------------SECCION DE CONTACTO---------------------- */
+.contact .row{
+    display: flex;
+    /* align-items: center; */
+    background: var(--color-negro);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+.contact .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.contact .row form h3{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #fff;
+}
+.contact .row form .inputBox{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: var(--color-fondo);
+    border: var(--bordes);
+}
+.contact .row form .inputBox span{
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+.contact .row form .inputBox input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background:none ;
+}
+
+/* -------------------------------------------SECCION BLOG DE NOTICIAS----------------- */
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.blogs .box-container .box{
+    border:var(--bordes);    
+}
+
+.blogs .box-container .box .image{
+    height: 25rem;
+    overflow:hidden;
+    width: 100%;
+}
+
+.blogs .box-container .box .image img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.blogs .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+
+.blogs .box-container .box .content{
+    padding:2rem;
+}
+
+.blogs .box-container .box .content .title{
+    font-size: 2.5rem;
+    line-height: 1.5;
+    color:#fff;
+}
+
+.blogs .box-container .box .content .title:hover{
+    color:var(--color-menu);
+}
+
+.blogs .box-container .box .content span{
+    color:var(--color-menu);
+    display: block;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+.blogs .box-container .box .content p{
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color:#ccc;
+    padding:1rem 0;
+}
+
+/* ----------------------------------------SECCION DEL FOOTER-------------------- */
+.footer{
+    background:var(--color-negro);
+    text-align: center;
+}
+
+.footer .share{
+    padding:1rem 0;
+}
+
+.footer .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: rgba(119, 0, 255, 0.645);
+    border:var(--bordes);
+    margin:.3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    background-color: black;
+    color: red;
+}
+
+.footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    gap:1rem;
+}
+
+.footer .links a{
+    padding:.7rem 2rem;
+    color: rgba(119, 0, 255, 0.645);
+    border:var(--bordes);
+    font-size: 2rem;
+}
+
+.footer .links a:hover{
+    background:black;
+    color: red;
+}
+
+.footer .credit{
+    font-size: 2rem;
+    color:#fff;
+    font-weight: lighter;
+    padding:1.5rem;
+}
+
+.footer .credit span{
+    color:red;
+}
+
+
+/* ---------------------------------------------------ESTILOS DEL CARRITO---------------------------- */
+.misCompras .box-container{
+    /* El elemento se comporta como un elemento de bloque y establece su contenido de acuerdo con el modelo de cuadrícula. */
+    display: grid;
+    color: white;
+    /* La propiedad CSS grid-template-columns define el nombre de las líneas y las funciones de tamaño de línea de grid columns. */
+    /* Una columna de grid es una pista vertical en un CSS Grid Layout, y es el espacio entre dos líneas verticales de cuadrícula. Está definido por la propiedad grid-template-columns o por las propiedades abreviadas grid o grid-template (en-US). */
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap:1.5rem;
+}
+.misCompras .box-container .box{
+    padding: 5rem;
+    text-align: center;
+    border:var(--bordes);
+}
+.misCompras .box-container .box img{
+    /* height: 10rem; */
+    width:180px;
+     height:160px;
+}
+.misCompras .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.misCompras .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding: .5rem 0;
+}
+.misCompras .box-container .box .price span{
+    color: #fff;
+    font-size: 1.5rem;
+   text-decoration: line-through;
+}
+.misCompras .box-container .box:hover{
+  /* background: #fff; */
+}
+.misCompras .box-container .box:hover > *{
+    background: var(--color-negro);
+  }
+
+  #divBotonComprarCarrito {
+      text-align: center;
+    }
+    #divBotonComprarCarrito .btn{
+    border:var(--bordes);
+    text-align: center;
+}
+
+#divBotonComprarCarrito button{
+    text-align: center;
+}
+
+
+/* ----------------------------------------SECCION DE CARGAR SALDO-------------------------------------- */
+.cargarSaldo .row{
+    margin: 0 auto;
+    background: var(--color-negro);
+    width: 50%;
+}
+.cargarSaldo .row form{
+    flex: 1 1 45rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+.cargarSaldo .row form h4{
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+}
+.cargarSaldo .row form .inputBox{
+    margin: 0 auto;
+    width: 50%;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    background: var(--color-fondo);
+    border: var(--bordes);
+}
+.cargarSaldo .row form .inputBox span{
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+.cargarSaldo .row form .inputBox input{
+    width: 50%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background:none ;
+    text-align: center;
+}
+.mensajeExito{
+    margin-top: 20px;
+    font-size: 1.4rem;
+    color: greenyellow;
+}
+.mensajesC{
+    margin-top: 20px;
+    font-size: 1.4rem;
+    color: red;
+}

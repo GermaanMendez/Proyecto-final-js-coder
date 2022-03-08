@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="/usuario.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/estilos.css">
+    <title>Proyecto curso JS</title>
+</head>
+<body>
+    <!--------------------- Logo a la izqueirda del navbar ---------------------------------------------------->
+<header class="header">
+    <a href="#" class="logo">
+        <img src="/imgs/logoNabvarRedragon.png" alt="logo de la marca Redragon">
+    </a>
+
+<!-- -------------------------------------navbar ----------------------------------------------------------->
+<nav class="navbar" id="navbar">
+    <a href="#home" id="btnNavBarHome">home</a>
+    <a href="#products" id="btnNavBarProducts">Productos</a>
+    <a href="#contact" id="btnNavBarContact">Contacto</a>
+    <a href="#about" id="btnNavBarNosotros">Nosotros</a>
+    <a href="#footer" id="btnNavBarRedes">Redes</a>
+    <a href="#blogs" id="btnNavBarNoticias">Noticias</a>
+    <a href="#cargarSaldo" id="btnNavBarCargarSaldo">Cargar saldo</a>
+    <a href="#logout" id="btnNavBarLogOut">Cerrar sesion</a>
+    <a href="#login" id="btnNavBarLogin">Iniciar sesion</a>
+    <a href="#register" id="btnNavBarRegister">Registro</a>
+</nav>
+<!-- -------------------------------------------------icono carrito derecha del navbar----------------------- -->
+<div class="icons">
+    <div><a class="fas fa-shopping-cart" id="botonCarrito" href="#misCompras"></a></div>
+</div>
+</header>
+
+
+
+
+<!-- /* --------------------------------SECCION DEL HOME---------------- */ -->
+<section class="home" id="home"> 
+
+    <div class="content">
+        <h3>Arma tu pc con nosotros</h3>
+        <p>
+            En nuestra tienda online podras encontrar los mejores componentes para que armes tu pc a tu medida y puedas disfrutar de los mejores juegos en la mejor calidad grafica.
+        </p>
+        <a href="#menu" class="btn">Compra tus componentes ahora</a>
+    </div>
+</section>
+
+<!-- /* ------------------------------------SECCION DE ABOUT---------------- */ -->
+<section class="about" id="about">
+    <h1 class="heading"><span>Sobre </span>nosotros</h1>
+    <div class="row">
+        <div class="image">
+            <img src="/imgs/redragonNeon.jfif" alt="">
+        </div>
+        <div class="content">
+            <h3>porque armar tu pc con nosotros</h3>
+            <p>Redragon is a manufacturer of unique high-quality products for gamers. The company specializes in research, development and manufacturing of gaming devices and accessories: keyboards, mice and mousepads.
+            </p>
+            <p>Created in 2012 Redragon brand has already earned a great popularity among gamers all over the world: in Asia, USA and UK. In 2015 Redragon was introduced to Russian market.
+            </p>
+            <a href="#menu" class="btn"> Mostrar Productos</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ------------------------------------------ SECCION INICIAR SESION -->
+<section class="login" id="login">
+    <h1 class="heading"> Iniciar <span>Sesion</span> </h1>
+    <div class="row">
+        <form action="">
+            <h3>Ingresa tus datos </h3>
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="nombre" id="inputNombreLogin">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="password" placeholder="password" id="inputPasswordLogin">
+            </div>
+            <input type="button" value="Iniciar sesion" class="btn" id="btnLogin">
+            <input type="button" value="||" class="btn">
+            <input type="submit" value="Registrarse" class="btn" id="btnRegisterLogin">
+            <p class="mensajesP" id="mensajeLogin"></p>
+        </form>
+    </div>
+
+</section>
+
+<!-- ------------------------------------------ SECCION REGISTRO -->
+<section class="register" id="register">
+    <h1 class="heading"> REGISTRO</h1>
+    <div class="row">
+        <form action="">
+            <h3>Ingresa tus datos </h3>
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="nombre" id="inputNombreRegister">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" placeholder="email" id="inputEmailRegister">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="password" placeholder="password" id="inputPasswordLogin">
+            </div>
+            <input type="submit" value="Registrarse" class="btn" id="btnRegister">
+            <input type="button" value="||" class="btn">
+            <input type="submit" value="Iniciar sesion" class="btn" id="btnLoginRegister">
+            <p class="mensajesP" id="mensajeRegistro"></p>
+        </form>
+    </div>    
+</section>
+
+<!-- /* ----------------------------------SECCION DE PRODUCTOS COMBO MENU---------------- */ -->
+<section class="menu" id="menu">
+        <h1 class="heading" id="h1ProductosCombos"></h1>
+        <div class="box-container" id="boxContainerProductosCombos">
+        </div>
+</section>
+<!-- ---------------------------------------------------- SECCION  DE PRODUCTOS COMPONENTES ------------------------>
+    
+<section class="products" id="products">
+    <h1 class="heading" id="h1ProductosComponentes"></h1>
+    <div class="box-container" id="boxContainerProductosComponentes">
+    </div>
+</section>
+
+<!-- ------------------------------------------SECCION DE MOSTRAR MI CARRITO DE COMPRAS ------------->
+<section class="misCompras" id="misCompras">
+    <h1 class="heading" id="h1Carrito"></h1>
+    <div class="box-container" id="boxContainerMisCompras">
+    </div>
+    <div id="divBotonComprarCarrito"></div>
+</section>
+
+<!-- ------------------------------------------SECCION DE MOSTRAR MI PERFIL Y FINALIZAR COMPRA ---- ------------->
+<section class="misCompras" id="miPerfil">
+    <h1 class="heading" id="h1MiPerfil">Lista de compras realizadas</h1>
+    <div class="box-container" id="boxContainerMisComprasMiPerfil"></div>
+    <h3 class="heading" id="h2ProductosCompraFinalizada"></h3>
+    <input type="submit" value="Volver al menu" class="btn" id="btnVolverMenu">
+</section>
+
+<!-- ------------------------------------------SECCION DE CONTACTO ------------->
+<section class="contact" id="contact">
+    <h1 class="heading"><span>Contacta con</span> nosotros</h1>
+
+    <div class="row">
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487733.87645265786!2d-56.53997211341125!3d-34.847899730008606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f80ffc63bf7d3%3A0x686fbde87255a664!2sMontevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses-419!2suy!4v1646252217429!5m2!1ses-419!2suy"></iframe>
+      
+        <form action="">
+            <h3>Ingresa tus datos </h3>
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="name" id="nombreContactar">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" placeholder="email" id="emailContactar">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-phone"></span>
+                <input type="number" placeholder="phone" id="telefonoContactar">
+            </div>
+            <input type="submit" value="Contactar" class="btn" id="btnContactar">
+            <p class="mensajesP" id="mensajeContactar"></p>
+        </form>
+    </div>
+</section>
+
+<!-- -----------------------------SECCION BLOG DE NOTICIAS--------------- -->
+<section class="blogs" id="blogs">
+
+    <h1 class="heading"> Noticias <span>Gaming</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="/imgs/noticia-nuevos-procesadores.webp" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">Nuevos procesadores para 2023</a>
+                <span>by Intel / 21st may, 2021</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, dicta.</p>
+                <a href="#" class="btn">Leer mas</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="/imgs/noticia-micro-chips.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">Escases de MicroChips</a>
+                <span>by Intel / 10st feb, 2021</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, dicta.</p>
+                <a href="#" class="btn">Leer mas</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="/imgs/noticia-nuevos-productos-redragon.jpg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">Nuevos productos Redragon</a>
+                <span>by Redragon / 14st ene, 2022</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, dicta.</p>
+                <a href="#" class="btn">Leer mas</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- -------------------------------------SECCION DE CARGAR SALDO--------------------- -->
+<section class="cargarSaldo" id="cargarSaldo">
+    <h2 class="heading"><span>cargar</span> saldo</h2>
+    <div class="row">
+        <form action="">
+            <h4>Ingresa el monto: </h4>
+            <div class="inputBox">
+                <!-- <span class="fas fa-user"></span> -->
+                <input type="number" placeholder="saldo" id="cantidadSaldoFormulario">
+            </div>
+            <input type="button" value="Aceptar" class="btn" id="btnCargarSaldo">
+            <p class="mensajesC" id="mensajeCargarSaldo"></p>
+        </form>
+    </div>
+</section>
+
+
+<!-- -----------------------------------------SECCION DEL FOOTER------------ -->
+
+<section class="footer" id="footer">
+
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+    </div>
+
+    <div class="links" id="links">
+        <a href="#">home</a>
+        <a href="#products" id="btnProductosFoter">Productos</a>
+        <a href="#contact">Contacto</a>
+        <a href="#" id="logout">Cerrar sesion</a>
+    </div>
+
+    <div class="credit">creador por <span>German Mendez</span></div>
+
+</section>
+
+<script src="/codigo.js"></script>
+
+</body>
+</html>
